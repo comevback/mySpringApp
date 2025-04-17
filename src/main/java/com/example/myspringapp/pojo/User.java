@@ -1,6 +1,6 @@
 package com.example.myspringapp.pojo;
 
-import jakarta.persistence.*;
+import javax.persistence.*;
 
 @Table(name = "table_user")
 @Entity

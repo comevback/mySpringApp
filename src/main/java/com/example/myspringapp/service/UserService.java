@@ -28,9 +28,9 @@ public class UserService implements IUserService {
 
     @Override
     public User selectById(Integer userId){
-        return userRepository.findById(userId).orElseThrow(() ->{
-            throw new IllegalArgumentException("error: user not exist");
-        });
+        return userRepository.findById(userId).orElseThrow(() ->
+            new IllegalArgumentException("error: user not exist")
+        );
     }
 
     @Override

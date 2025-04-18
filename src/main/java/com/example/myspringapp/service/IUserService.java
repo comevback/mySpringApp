@@ -7,13 +7,13 @@ import java.util.List;
 
 public interface IUserService {
     // add user
-    User add(UserDto user);
+    int add(UserDto user);
     // find a user
     User selectById(Integer userId);
 
     List<User> selectAll();
 
-    User editById(Integer userId,UserDto userInfo);
+    User update(Integer userId,UserDto userInfo);
 
     void deleteById(Integer userId);
 }

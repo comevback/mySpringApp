@@ -1,7 +1,8 @@
 package com.example.myspringapp.controller;
 
-import com.example.myspringapp.dto.ResponseMessage;
+import com.example.myspringapp.message.ResponseMessage;
 import com.example.myspringapp.dto.UserDto;
+import com.example.myspringapp.mybatis.UserMapper;
 import com.example.myspringapp.pojo.User;
 import com.example.myspringapp.service.IUserService;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -18,13 +19,9 @@ public class UserController {
     IUserService userService;
 
     @PostMapping
-    public ResponseMessage<User> add(@Validated @RequestBody UserDto user){
-
-        User user_return = userService.add(user);
-        ResponseMessage<User> returnBody = ResponseMessage.success(user_return);
-        return returnBody;
-
-        // return(userService.add(user).toString());
+    public ResponseMessage<Integer> add(@Validated @RequestBody UserDto user){
+        int user_return = userService.add(user);
+        return ResponseMessage.success(user_return);
     }
 
     // index
@@ -50,7 +47,7 @@ public class UserController {
     // edit a user info by id
     @PutMapping("/{userId}")
     public ResponseMessage editUser(@Validated @PathVariable Integer userId, @RequestBody UserDto userInfo){
-        User userEdited = userService.editById(userId,userInfo);
+        User userEdited = userService.update(userId,userInfo);
         return ResponseMessage.success(userEdited);
     }
 

@@ -1,4 +1,4 @@
-package com.example.myspringapp.dto;
+package com.example.myspringapp.message;
 
 import org.springframework.http.HttpStatus;
 

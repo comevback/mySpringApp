@@ -1,6 +1,6 @@
 package com.example.myspringapp.exception;
 
-import com.example.myspringapp.dto.ResponseMessage;
+import com.example.myspringapp.message.ResponseMessage;
 import jakarta.servlet.http.HttpServletRequest;
 import jakarta.servlet.http.HttpServletResponse;
 import org.slf4j.Logger;
